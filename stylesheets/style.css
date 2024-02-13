@@ -1,110 +1,192 @@
 /*mobile version*/
+:root {
+    --block1-color: rgb(133, 163, 140);
+    --smallblock2-color: rgb(156, 135, 163);
+    --smallblock3-color: rgb(247, 194, 131);
+    --block3-color: rgb(184, 149, 157);
+    --block4-color: rgb(177, 150, 119);
+    --page-color: rgb(225, 214, 201);
+    --accent1-color: black;
+    --accent2-color: rgb(92, 97, 102);
+    --accent3-color: white;
+  }
+  
 
 .page {
-    display: flex;
-    flex-direction: column;
+    background-color: var(--page-color);
+}
+
+.block1,
+.block2,
+.block3 {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  border-radius: 25px;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.block1 {
+  background-color: var(--block1-color);
+}
+
+.block2 {
+    padding: 0%;
+}
+
+.block3 {
+    background-color: var(--block3-color);
+}
+
+.small-block1,
+.small-block2 {
     font-family: Arial;
+    border-radius: 25px;
+    padding: 2%;
+    width: 96%;
+}
+
+.small-block1 {
+    background-color: var(--smallblock2-color);
+    margin-bottom: 2%;
+}
+  
+.small-block2 {
+    row-gap: 2%;
+    column-gap: 2%;
+    background-color: var(--smallblock3-color);
+    margin-left: 0%;
 }
 
 .personalia {
-    background-color: rgba(141, 161, 143, 0.96);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile {
-    background-color: rgba(255, 255, 255, 0.96);
-    width: 100%;
-}
-
 .person-logo {
-    border: 4px solid black;
+    border: 4px solid var(--accent1-color);
     border-radius: 50%;
     margin: 15px 0px 15px 0px;
-    width: 20%;
+    width: 30%;
     animation: glow 3s ease alternate;
 }
 
-.profile-content {
+
+.aboutMe {
+    width: 100%;
+}
+
+.education {
+    width: 100%;
+}
+
+.skills{
+    width: 100%;
+}
+
+.langauge-block{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent2-color);
+    border-radius: 15px;
+    margin-top: 2%;
+    padding: 2%;
+}
+
+.standard-content {
     padding: 15px;
     font-size: 20px;
 }
 
-.profile-content__category-title {
-    color: rgb(127, 148, 129);
+.standard-content__category-titleblock {
+    color: black;
+
 }
 
-.profile-content__category--hidden-mobile {
+.standard-content__category--hidden-mobile {
     display: none;
 }
 
-.profile-content__element {
+.standard-content__element {
     display: flex;
     flex-direction: column;
 }
 
-.profile-content__element--hidden-mobile {
+.standard-content__element--hidden-mobile {
     display: flex;
     flex-direction: column;
     display: none;
 }
 
-.profile-content__title {
+.standard-content__title {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 2px;
     margin-top: 6px;
 }
 
-.profile-content__period {
-    display: none;
+.education-content__period {
+    display: flex;
+    flex-direction: column;
+    color: var(--accent1-color);
+    font-size: 14px;
 }
 
-.profile-content__institute {
-    color: rgb(127, 148, 129);
+.education-content__institute {
+    color: var(--accent1-color);
     margin-top: 0px;
     font-size: 14px;
 }
 
 @media only screen and (min-width: 800px) {
 
-    .page {
+    .block1 {
         flex-direction: row;
     }
 
-    .person-name{
-        order: -1;
+    .block2 {
+        flex-direction: row;
     }
 
-    .profile-content__category--hidden-mobile{
+    .small-block1,
+    .small-block2 {
+        margin-bottom: 0%;
+    }
+
+    .small-block1 {
+        margin-right: 1%;
+    }
+
+    .small-block2 {
+        margin-left: 1%;
+    }
+
+    .standard-content__category--hidden-mobile{
         display: flex;
         flex-direction: column;
+        font-size: 26px;
     }
 
-    /*fix: anders als stipje zichtbaar*/
-    .profile-content__category--hidden-mobile hr{
+    .standard-content__category--hidden-mobile hr{
         width: 100%;
     }
 
-    .profile-content__element--hidden-mobile {
+    .standard-content__element--hidden-mobile {
         display: flex;
     }
 
-    .profile-content__element-header{
+    .standard-content__element-header{
         display: flex;
         justify-content: space-between;
     }
 
-    .profile-content__period {
+    .education-content__period {
+        display: flex;
         font-size: 12px;
         color: #5c6166;
-        display: flex;
     }
 
 }
-
-
-/*student uitwerking*/
-
