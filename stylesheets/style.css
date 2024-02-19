@@ -10,38 +10,37 @@
     --accent2-color: rgb(92, 97, 102);
     --accent3-color: white;
   }
-  
 
 .page {
     background-color: var(--page-color);
+    display: flex;
+    flex-direction: column;
 }
 
-.block1,
-.block2,
-.block3 {
+.section1,
+.section2,
+.section3 {
   display: flex;
   flex-direction: column;
-  font-family: Arial;
   border-radius: 25px;
   padding: 2%;
   margin-bottom: 2%;
 }
 
-.block1 {
+.section1 {
   background-color: var(--block1-color);
 }
 
-.block2 {
+.section2 {
     padding: 0%;
 }
 
-.block3 {
+.section3 {
     background-color: var(--block3-color);
 }
 
 .small-block1,
 .small-block2 {
-    font-family: Arial;
     border-radius: 25px;
     padding: 2%;
     width: 96%;
@@ -153,12 +152,20 @@
 }
 
 @media only screen and (min-width: 800px) {
-
-    .block1 {
+    .page{
+        display: flex;
         flex-direction: row;
     }
 
-    .block2 {
+    .rightside {
+        margin-left: 2%;
+        width: 90%;
+    }
+    .section1 {
+        flex-direction: row;
+    }
+
+    .section2 {
         flex-direction: row;
     }
 
