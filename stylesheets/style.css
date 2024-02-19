@@ -74,7 +74,6 @@
     animation: glow 3s ease alternate;
 }
 
-
 .aboutMe {
     width: 100%;
 }
@@ -126,6 +125,18 @@
     font-size: 18px;
     margin-bottom: 2px;
     margin-top: 6px;
+}
+
+.standard-content__institute,
+.standard-content__subtext {
+    color: var(--accent1-color);
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+.standard-content__text {
+    margin-top: 0px;
+    font-size: 16px;
 }
 
 .education-content__period {
