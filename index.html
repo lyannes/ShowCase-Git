@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/navigationbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="js/gdpr.js"></script>
-    <script src="js/gdpr.js"></script>
+    <script src="js/contact.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
@@ -29,10 +29,16 @@
 
     <nav class="navigation-menu">
         <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#aboutMe">About me</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+
     </nav>
 
     <div class="rightside">
-        <div class="section1">
+        <div class="section1" id="aboutMe">
             <section class="personalia">
                 <img class="person-logo" src="images/Photobooth Lyanne Parijs - kopie.jpg" alt>
                 <h1 class="person-name">Lyanne Dokter</h1>
@@ -61,7 +67,7 @@
         </div>
     
         <div class="section2">
-            <div class="small-block1">
+            <div class="small-block1" id="eduction">
                 <section class="education">
                     <div class="standard-content__category">
                         <h3 class="standard-content__category-titleblock">Educations</h3>
@@ -86,7 +92,7 @@
                 </section>
             </div>
         
-            <div class="small-block2">
+            <div class="small-block2" id="skills">
                 <section class="skills">
                     <div class="standard-content__category">
                         <h3 class="standard-content__category-titleblock">Skills</h3>
@@ -108,7 +114,7 @@
             </div>
         </div>
     
-        <div class="section3">
+        <div class="section3" id="work" >
             <section class="work">
                 <div class="standard-content__category">
                     <h3 class="standard-content__category-titleblock">Work</h3>
@@ -132,7 +138,7 @@
             </section>
         </div>
 
-        <div class="section4">
+        <div class="section4" id="contact">
             <div class="standard-content__category">
                 <h3 class="standard-content__category-titleblock">Contact</h3>
                 <hr>
@@ -143,21 +149,27 @@
                         <a href="#" class="fa fa-linkedin"></a>
                     </div>
                     <form class="contactform" name="contactform">
-                        <label>Name:</label><br> 
-                        <input class="input" id="firstnameInput" name="firstname" type="text" placeholder="First name" required>
-                        <input class="input" id="lastnameInput" name="lastname" type="text" placeholder="Last name" required><br>
-                        <label>Emailadres:</label><br>  
-                        <input class="input" id="emailInput" name="email" type="email" placeholder="name@gmail.com" required><br>
-                        <label>Telephone number:</label><br>  
-                        <input class="input" id="telephoneInput" name="telephone" type="tel"placeholder="06-12345678" pattern="06-[0-9]{8}" required><br>
-                        <label>Message:</label><br>
-                        <input class="input-text" id="messageInput" name="message" type="text" maxlength="900" placeholder="Maximum of 900 characters"><br>
-                        <input class="input" id="sendButton" type="submit" value="send">
+                        <h4 id="errorMessage" class="errormessage.hidden"></h4>
+                        <label>* Name:</label><br> 
+                        <input class="input" id="firstnameInput" name="firstname" type="text" placeholder="First name" maxlength="60" onkeyup="validateName(this)" required>
+                        <input class="input" id="lastnameInput" name="lastname" type="text" placeholder="Last name" maxlength="60" onkeyup="validateName(this)" required><br>
+                        <label>* Emailadres:</label><br>  
+                        <input class="input" id="emailInput" name="email" type="email" placeholder="name@gmail.com" maxlength="80" onkeyup="validateEmail(this)" required><br>
+                        <label>* Telephone number:</label><br>  
+                        <input class="input" id="telephoneInput" name="telephone" type="tel" placeholder="06-12345678" pattern="06-[0-9]{8}" maxlength="20" onkeyup="validateTelephone(this)" required><br>
+                        <label>Reason for contact:</label><br>
+                        <select class="contactreason" oninput="validateInputs()">
+                            <option value="0">-</option>
+                            <option value="1">Internship</option>
+                            <option value="2">Job</option>
+                            <option value="3">Question</option>
+                            <option value="4">Other</option>
+                          </select>
+                        <input class="input" id="sendButton" type="submit" value="send"><br>
+                        <p class="standard-content__subtext">* required</p>
                     </form>
                 </div>
         </section>
     </div>
-
-
 </body>
 </html>

@@ -3,12 +3,12 @@
     --block1-color: rgb(133, 163, 140);
     --smallblock2-color: rgb(156, 135, 163);
     --smallblock3-color: rgb(247, 194, 131);
-    --block3-color: rgb(184, 149, 157);
-    --block4-color: rgb(128,148,172);
-    --navigationbar-color: rgb(177, 150, 119);
+    --block3-color: rgb(176, 118, 132);
+    --block4-color: rgb(106,133,164);
+    --navigationbar-color: rgb(172, 152, 129);
     --page-color: rgb(225, 214, 201);
     --accent1-color: black;
-    --accent2-color: rgb(92, 97, 102);
+    --accent2-color: rgb(236, 208, 176);
     --accent3-color: white;
   }
 
@@ -143,15 +143,32 @@
   }
 
 /*form formatting*/
-.input{
-    border: red;
+.input {
+    border: 2px solid #ced4da; /* Setting default border color */
     font-size: small;
 }
 
-.input-text{
-    font-size: small;
-    height: 100px;
-    width: 250px;
+.input.error {
+    border-color: red; /* Setting border color for invalid input */
+}
+
+.input.valid {
+    border-color: green; /* Setting border color for invalid input */
+}
+
+.errormessage{
+    color: rgb(216, 14, 14);
+    margin: 0px;
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.errormessage.visible{
+    visibility: visible;
+}
+
+.contactreason{
+
 }
 
 /*standard formatting*/
@@ -256,7 +273,5 @@
     .education-content__period {
         display: flex;
         font-size: 12px;
-        color: #5c6166;
     }
-
 }
