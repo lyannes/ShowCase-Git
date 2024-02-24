@@ -4,7 +4,7 @@
   padding: 2%;
   margin-bottom: 2%;
   list-style: none;
-}
+  }
 
 .navigation-menu a {
   float: left;
@@ -24,4 +24,13 @@
 .navigation-menu a.active {
   background-color: var(--block3-color);
   color: white;
+}
+
+.website-logo{
+  height: 70px;
+  width: 70px;
+}
+
+.navigationpoint{
+  text-align: center;
 }
