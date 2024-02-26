@@ -51,16 +51,3 @@ function validateInputs() {
   sendButton.disable = !(firstnameValid && lastnameValid && emailIsValid && telephoneIsValid);
   return true
 }
-
-function informationToJSON(){
-  if (validateInputs()){
-    let data = {
-      firstname: document.getElementById('firstnameInput'),
-      lastname: document.getElementById('lastnameInput'),
-      email: document.getElementById('emailInput'),
-      telephone: document.getElementById('telephoneInput')
-    }
-  
-    JSON.stringify(data);
-  }
-}
