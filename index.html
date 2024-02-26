@@ -160,12 +160,13 @@
                             <label for="telephone">* Telephone number:</label><br>  
                             <input class="input" id="telephone" name="telephone" type="tel" placeholder="06-12345678" pattern="06-[0-9]{8}" maxlength="20" onkeyup="validateTelephone(this)" required><br>
                             <label for="subject">* Subject:</label><br>  
-                            <input class="input" id="subject" name="subject" type="text" placeholder="Internship" maxlength="200"required><br>
+                            <input class="input" id="subject" name="subject" type="text" placeholder="Internship" maxlength="200" onkeyup="inputEmpty(this)" required><br>
                             <label for="message">* Message:</label><br>  
-                            <textarea class="input" placeholder="Mail text" id="message" class="feedback-input" name="message" maxlength="600" required></textarea><br>
+                            <textarea class="input" placeholder="Mail text" id="message" class="feedback-input" name="message" maxlength="600" onkeyup="inputEmpty(this)" required></textarea><br>
                         </form>
                         <p class="standard-content__subtext">* required</p>
                         <button onclick="sendEmail()" id="sendButton" type="submit">Send!</button>
+                        <div class="lds-ring.hidden"><div></div>
                     </div>
             </section>
         </div>

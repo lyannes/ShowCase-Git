@@ -1,5 +1,5 @@
 function sendEmail() {
-  var form = document.getElementById("contactform"); //emailForm
+  var form = document.getElementById("contactform");
   var formData = new FormData(form);
 
   fetch("http://localhost:5068/Mail/sendEmail", {
@@ -11,14 +11,24 @@ function sendEmail() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      // Assuming the response is plain text
+      
       return response.text();
     })
     .then((data) => {
       console.log("Success:", data);
+      alert("The mail is on the plane way to the northpole!");
+      resetForm();
     })
     .catch((error) => {
+      alert("The mail did not make it on the plane way to the northpole.");
       console.error("Error:", error);
     });
+}
+
+function resetForm() {
+  var inputs = document.querySelectorAll('.input');
+  inputs.forEach(function(input) {
+      input.classList.remove('valid');
+  });
+  document.getElementById("contactform").reset();
 }

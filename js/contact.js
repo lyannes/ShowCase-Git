@@ -1,7 +1,8 @@
 const errorMessages = {
   name: "Please enter your name.",
   email: "Please enter a valid email address.",
-  telephone: "Please enter a valid telephone number in the format 06-12345678."
+  telephone: "Please enter a valid telephone number in the format 06-12345678.",
+  empty: "Please fill in."
 };
 
 function validateName(input) {
@@ -38,16 +39,29 @@ function showErrorMessage(input, message){
   }
 }
 
+function inputEmpty(input) {
+  const notValid = input.value.trim() === '';
+  input.classList.toggle('error', notValid);
+  input.classList.toggle('valid', !notValid);
+  showErrorMessage(notValid, errorMessages.empty);
+  return !notValid;
+}
+
 function validateInputs() {
   const firstnameInput = document.getElementById('firstnameInput');
   const lastnameInput = document.getElementById('lastnameInput');
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
 
   const firstnameValid = validateName(firstnameInput);
   const lastnameValid = validateName(lastnameInput);
   const emailIsValid = validateEmail();
   const telephoneIsValid = validateTelephone();
+  const subjectValid = inputEmpty(subject);
+  const messageValid = inputEmpty(message);
   
   const sendButton = document.getElementById('sendButton');
-  sendButton.disable = !(firstnameValid && lastnameValid && emailIsValid && telephoneIsValid);
+  sendButton.disable = !(firstnameValid && lastnameValid && emailIsValid && telephoneIsValid && subjectValid && messageValid);
   return true
 }
+

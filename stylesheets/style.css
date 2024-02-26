@@ -167,8 +167,13 @@
     visibility: visible;
 }
 
-.contactreason{
-
+.flash-message {
+    background-color: #ffffcc;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: none; /* Verberg het bericht standaard */
 }
 
 /*standard formatting*/
