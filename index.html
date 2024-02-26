@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="js/gdpr.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/mail.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
@@ -67,7 +68,7 @@
         </div>
     
         <div class="section2">
-            <div class="small-block1" id="eduction">
+            <div class="small-block1" id="education">
                 <section class="education">
                     <div class="standard-content__category">
                         <h3 class="standard-content__category-titleblock">Educations</h3>
@@ -146,22 +147,24 @@
             <section class="contact">
                 <div class="contact">
                     <div class="contactmedia">
-                        <a href="#" class="fa fa-linkedin"></a>
+                        <a href="https://www.linkedin.com/in/lyanne-dokter-a0a118274/" class="fa fa-linkedin"></a>
                     </div>
-                    <form class="contactform" name="contactform">
+                    <div class="contactform" >
                         <h4 id="errorMessage" class="errormessage.hidden"></h4>
-                        <label>* Name:</label><br> 
-                        <input class="input" id="firstnameInput" name="firstname" type="text" placeholder="First name" maxlength="60" onkeyup="validateName(this)" required>
-                        <input class="input" id="lastnameInput" name="lastname" type="text" placeholder="Last name" maxlength="60" onkeyup="validateName(this)" required><br>
-                        <label>* Emailadres:</label><br>  
-                        <input class="input" id="emailInput" name="email" type="email" placeholder="name@gmail.com" maxlength="80" onkeyup="validateEmail(this)" required><br>
-                        <label>* Telephone number:</label><br>  
-                        <input class="input" id="telephoneInput" name="telephone" type="tel" placeholder="06-12345678" pattern="06-[0-9]{8}" maxlength="20" onkeyup="validateTelephone(this)" required>
-                        <input class="input" id="sendButton" type="submit" value="send"><br>
+                        <form id="contactform">
+                            <label for="name">* Name:</label><br> 
+                            <input class="input" id="firstname" name="firstname" type="text" placeholder="First name" maxlength="60" onkeyup="validateName(this)" required>
+                            <input class="input" id="lastname" name="lastname" type="text" placeholder="Last name" maxlength="60" onkeyup="validateName(this)" required><br>
+                            <label for="email">* Emailadres:</label><br>  
+                            <input class="input" id="email" name="email" type="email" placeholder="name@gmail.com" maxlength="80" onkeyup="validateEmail(this)" required><br>
+                            <label for="telephone">* Telephone number:</label><br>  
+                            <input class="input" id="telephone" name="telephone" type="tel" placeholder="06-12345678" pattern="06-[0-9]{8}" maxlength="20" onkeyup="validateTelephone(this)" required><br>
+                        </form>
                         <p class="standard-content__subtext">* required</p>
-                    </form>
-                </div>
-        </section>
+                        <button onclick="sendEmail()" type="submit">Send!</button>
+                    </div>
+            </section>
+        </div>
     </div>
 </body>
 </html>
