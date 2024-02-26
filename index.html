@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/gdpr.css">
     <link rel="stylesheet" href="stylesheets/navigationbar.css">
+    <link rel="stylesheet" href="stylesheets/captcha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="js/gdpr.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/mail.js"></script>
+    <script src="js/captcha.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
@@ -165,9 +167,18 @@
                             <textarea class="input" placeholder="Mail text" id="message" class="feedback-input" name="message" maxlength="600" onkeyup="inputEmpty(this)" required></textarea><br>
                         </form>
                         <p class="standard-content__subtext">* required</p>
-                        <button onclick="sendEmail()" id="sendButton" type="submit">Send!</button>
-                        <div class="lds-ring.hidden"><div></div>
+                        
+                        <section class="captcha">
+                            <div id="captcha"></div>
+                            <input type="text" id="userInput" placeholder="Voer de tekst hier in">
+                            <button onclick="checkCaptcha()">Controleer</button>
+                            <button onclick="refreshCaptcha()">Ververs CAPTCHA</button>
+                            <p id="result"></p>
+                            <button onclick="sendEmail()" class="sendButton" id="sendButton" type="submit">Send!</button>
+                            <div id="spinner" class="spinner hidden"></div>
+                        </div>
                     </div>
+                </div>
             </section>
         </div>
     </div>
