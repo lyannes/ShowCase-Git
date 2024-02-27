@@ -155,16 +155,16 @@
                         <h4 id="errorMessage" class="errormessage.hidden"></h4>
                         <form id="contactform">
                             <label for="name">* Name:</label><br> 
-                            <input class="input" id="firstname" name="firstname" type="text" placeholder="First name" maxlength="60" onkeyup="validateName(this)" required>
-                            <input class="input" id="lastname" name="lastname" type="text" placeholder="Last name" maxlength="60" onkeyup="validateName(this)" required><br>
+                            <input class="input" id="firstname" name="firstname" type="text" placeholder="First name" maxlength="60" onkeyup="validateFirstname(this)" required>
+                            <input class="input" id="lastname" name="lastname" type="text" placeholder="Last name" maxlength="60" onkeyup="validateLastname(this)" required><br>
                             <label for="email">* Emailadres:</label><br>  
                             <input class="input" id="email" name="email" type="email" placeholder="name@gmail.com" maxlength="80" onkeyup="validateEmail(this)" required><br>
                             <label for="telephone">* Telephone number:</label><br>  
                             <input class="input" id="telephone" name="telephone" type="tel" placeholder="06-12345678" pattern="06-[0-9]{8}" maxlength="20" onkeyup="validateTelephone(this)" required><br>
                             <label for="subject">* Subject:</label><br>  
-                            <input class="input" id="subject" name="subject" type="text" placeholder="Internship" maxlength="200" onkeyup="inputEmpty(this)" required><br>
+                            <input class="input" id="subject" name="subject" type="text" placeholder="Internship" maxlength="200" onkeyup="validateSubject(this)" required><br>
                             <label for="message">* Message:</label><br>  
-                            <textarea class="input" placeholder="Mail text" id="message" class="feedback-input" name="message" maxlength="600" onkeyup="inputEmpty(this)" required></textarea><br>
+                            <textarea class="input" placeholder="Mail text" id="message" class="feedback-input" name="message" maxlength="600" onkeyup="validateMessage(this)" required></textarea><br>
                         </form>
                         <p class="standard-content__subtext">* required</p>
                         
@@ -174,7 +174,7 @@
                             <button onclick="checkCaptcha()">Controleer</button>
                             <button onclick="refreshCaptcha()">Ververs CAPTCHA</button>
                             <p id="result"></p>
-                            <button onclick="sendEmail()" class="sendButton" id="sendButton" type="submit">Send!</button>
+                            <button onclick="sendEmail()" class="sendButton" id="sendButton" type="submit" disabled>Send!</button>
                             <div id="spinner" class="spinner hidden"></div>
                         </div>
                     </div>

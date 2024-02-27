@@ -18,7 +18,7 @@ function checkCaptcha() {
   if (userInput === captcha) {
     resultText.textContent = "CAPTCHA correct!";
     resultText.style.color = "green";
-    var sendbutton = document.getElementById('sendButton')
+    const sendbutton = document.getElementById('sendButton')
     sendbutton.classList.add('show');
   } else {
     resultText.textContent = "CAPTCHA onjuist, probeer opnieuw.";
